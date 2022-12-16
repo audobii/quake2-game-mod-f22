@@ -255,9 +255,18 @@ void DeathmatchScoreboardMessage (edict_t *ent, edict_t *killer)
 	char  st[1024];
 
 	Com_sprintf(st, sizeof(st),		
-		"xv 0 yv 24 cstring2 \"%s\" ",
-		"HELP SCREEN\n\nThis is how to play this quake 2 mod.\nFILL THIS OUT BEFORE HANDING IN");
-
+		"xv 0 yv 10 cstring2 \"%s\" "
+		"xv 0 yv 30 cstring2 \"%s\" "
+		"xv 0 yv 50 cstring2 \"%s\" "
+		"xv 0 yv 70 cstring2 \"%s\" "
+		"xv 0 yv 90 cstring2 \"%s\" "
+		"xv 0 yv 110 cstring2 \"%s\" ",
+		"HELP SCREEN\n\nUse the console (press tilde) to type in cmds.",
+		"\nWelcome to my (unnamed) Quake 2 mod!",
+		"\nYou can start Zombies Mode by typing startzombies into the console.",
+		"\nTo use the random gun loot box, type randomgun into the console.",
+		"\nTest the (very few) modifications I made to weapons by using them.",
+		"(Or using give all to get all of them and test.)");
 	gi.WriteByte(svc_layout);
 	gi.WriteString(st);
 	gi.unicast(ent, true);

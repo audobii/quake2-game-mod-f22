@@ -1,4 +1,10 @@
+c:\users\audrey\git\quake2-game-mod-f22\game\release\m_spawner.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\m_berserk.obj
+c:\users\audrey\git\quake2-game-mod-f22\game\release\g_monster.obj
+c:\users\audrey\git\quake2-game-mod-f22\game\release\g_cmds.obj
+c:\users\audrey\git\quake2-game-mod-f22\game\release\p_client.obj
+c:\users\audrey\git\quake2-game-mod-f22\game\release\g_main.obj
+c:\users\audrey\git\quake2-game-mod-f22\game\release\p_hud.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\m_actor.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_weapon.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_utils.obj
@@ -9,13 +15,10 @@ c:\users\audrey\git\quake2-game-mod-f22\game\release\g_svcmds.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_spawn.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_save.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_phys.obj
-c:\users\audrey\git\quake2-game-mod-f22\game\release\g_monster.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_misc.obj
-c:\users\audrey\git\quake2-game-mod-f22\game\release\g_main.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_items.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_func.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_combat.obj
-c:\users\audrey\git\quake2-game-mod-f22\game\release\g_cmds.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_chase.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\g_ai.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\m_soldier.obj
@@ -42,11 +45,8 @@ c:\users\audrey\git\quake2-game-mod-f22\game\release\q_shared.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\p_weapon.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\p_view.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\p_trail.obj
-c:\users\audrey\git\quake2-game-mod-f22\game\release\p_hud.obj
-c:\users\audrey\git\quake2-game-mod-f22\game\release\p_client.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\m_tank.obj
 c:\users\audrey\git\quake2-game-mod-f22\game\release\m_supertank.obj
-c:\users\audrey\git\quake2-game-mod-f22\game\release\m_spawner.obj
 c:\users\audrey\git\quake2-game-mod-f22\release\gamex86.lib
 c:\users\audrey\git\quake2-game-mod-f22\release\gamex86.exp
 c:\program files (x86)\steam\steamapps\common\quake 2\modq2\gamex86.dll
