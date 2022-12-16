@@ -22,5 +22,14 @@ C:\Users\Audrey\git\quake2-game-mod-f22\game\g_cmds.c(1024,2): warning C4996: 'g
 C:\Users\Audrey\git\quake2-game-mod-f22\game\g_cmds.c(1025,2): warning C4996: 'gcvt': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _gcvt. See online help for details.
 C:\Users\Audrey\git\quake2-game-mod-f22\game\g_cmds.c(1026,2): warning C4996: 'gcvt': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _gcvt. See online help for details.
 C:\Users\Audrey\git\quake2-game-mod-f22\game\g_cmds.c(1041,2): warning C4996: 'gcvt': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _gcvt. See online help for details.
+C:\Users\Audrey\git\quake2-game-mod-f22\game\g_cmds.c(1054,6): warning C4101: 'selected_weapon': unreferenced local variable
+  g_main.c
+C:\Users\Audrey\git\quake2-game-mod-f22\game\g_main.c(151,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Audrey\git\quake2-game-mod-f22\game\g_main.c(163,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Audrey\git\quake2-game-mod-f22\game\g_main.c(236,7): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\Audrey\git\quake2-game-mod-f22\game\g_main.c(238,7): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Audrey\git\quake2-game-mod-f22\game\g_main.c(242,9): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Audrey\git\quake2-game-mod-f22\game\g_main.c(255,8): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> C:\Program Files (x86)\Steam\steamapps\common\Quake 2\modq2\gamex86.dll

@@ -725,12 +725,13 @@ void bfg_explode (edict_t *self)
 	float	points;
 	vec3_t	v;
 	float	dist;
-
+	/*
 	if (self->s.frame == 0)
 	{
 		// the BFG effect
+		
 		ent = NULL;
-		while ((ent = findradius(ent, self->s.origin, self->dmg_radius)) != NULL)
+		while ((ent = findradius(ent, self->s.origin, self->dmg_radius)) != NULL) //could be helpful
 		{
 			if (!ent->takedamage)
 				continue;
@@ -755,8 +756,9 @@ void bfg_explode (edict_t *self)
 			gi.multicast (ent->s.origin, MULTICAST_PHS);
 			T_Damage (ent, self, self->owner, self->velocity, ent->s.origin, vec3_origin, (int)points, 0, DAMAGE_ENERGY, MOD_BFG_EFFECT);
 		}
+		
 	}
-
+	*/
 	self->nextthink = level.time + FRAMETIME;
 	self->s.frame++;
 	if (self->s.frame == 5)
