@@ -20,7 +20,7 @@ DELIVERABLES AND HOW TO TEST THEM
 
 -Randomized loot box (for guns): Type **randomgun** into the console to get a random gun.
 
--Replace Quake weapons with a different weapon theme: An attempt was made - you can use the **give all** command and test the small change I made to some weapons (BFG, Railgun, blaster). You can try using typing **zoom** in with the railgun equipped to have a sorta scope. However I didn't get to every one. I tried to make them themed to specific Splatoon weapons (blaster, dualies, etc.) but didn't have time.
+-Replace Quake weapons with a different weapon theme: An attempt was made - you can use the **give all** command and test the small change I made to some weapons (BFG, hyperblaster, Railgun, blaster). You can try using typing **zoom** in with the railgun equipped to have a sorta scope. However I didn't get to every one. I tried to make them themed to specific Splatoon weapons (blaster, dualies, charger, etc.) but didn't have time.
 
 -Item pickups (w/ theme? like potions, etc.): Incomplete.
 
