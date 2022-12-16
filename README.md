@@ -8,7 +8,7 @@ DELIVERABLES AND HOW TO TEST THEM
 
 -Shortcut that Auto-Launches your Mod: Create shortcut from Quake2.exe and edit properties- add +set game modq2 +set cheats 1 to the end of the target string.
 
--Mod in a Separate Folder: Create new folder where baseq2 is kept. Name it modq2. Make sure this mod's dll is in there.
+-Mod in a Separate Folder: Create new folder where baseq2 is kept. Name it modq2. Make sure this mod's dll is in there, and make sure maps.lst is included too.
 
 -README file in GIT that explains HOWTO install and play / test your mod: You are reading it!
 
