@@ -1044,6 +1044,49 @@ void Cmd_What_Time_f(edict_t* ent) {
 	gi.cprintf(ent, PRINT_HIGH, time_str);
 }
 
+//ZOOM CMD ADAPTED FROM QDEVELS
+//https://web.archive.org/web/20031119203953/http://www.planetquake.com/Qdevels/quake2/28_1_98a.html
+
+//how to bind this?? to ;
+void Cmd_Zoom(edict_t* ent) {
+	//from prev weapon cmd
+	gclient_t* cl;
+	int	selected_weapon;
+
+	cl = ent->client;
+
+	if (!cl->pers.weapon)
+		return;
+
+	char* curr_weapon_name = cl->pers.weapon->classname;
+
+	gi.cprintf(ent, PRINT_HIGH, curr_weapon_name);
+
+	if (Q_stricmp(curr_weapon_name, "weapon_railgun") == 0)
+	{
+		//int zoomtype = atoi(gi.argv(1));
+
+		if (zoomMode == 0)
+		{
+			ent->client->ps.fov = 90;
+			zoomMode = 1;
+		}
+		else if (zoomMode == 1)
+		{
+			if (ent->client->ps.fov == 90)
+				ent->client->ps.fov = 40;
+			else if (ent->client->ps.fov == 40)
+				ent->client->ps.fov = 20;
+			else if (ent->client->ps.fov == 20)
+				ent->client->ps.fov = 10;
+			else
+				ent->client->ps.fov = 90;
+
+			zoomMode = 0;
+		}
+	}
+}
+
 /*
 =================
 ClientCommand
@@ -1141,6 +1184,8 @@ void ClientCommand (edict_t *ent)
 		Cmd_What_Time_f(ent);
 	else if (Q_stricmp(cmd, "startzombies") == 0)
 		Cmd_StartZombiesMod_f(ent);
+	else if (Q_stricmp(cmd, "zoom") == 0)
+		Cmd_Zoom(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }

@@ -552,6 +552,7 @@ extern	cvar_t	*sv_maplist;
 
 //for mod
 extern int currentWave;
+extern int zoomMode;
 
 #define world	(&g_edicts[0])
 
@@ -1112,8 +1113,5 @@ struct edict_s
 	// common data blocks
 	moveinfo_t		moveinfo;
 	monsterinfo_t	monsterinfo;
-
-	//for mod
-	//int currentWave;
 };
 

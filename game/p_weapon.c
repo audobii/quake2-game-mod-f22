@@ -876,6 +876,8 @@ void Weapon_HyperBlaster_Fire (edict_t *ent)
 	int		effect;
 	int		damage;
 
+	vec3_t new_offset = { 10,10,0 };
+
 	ent->client->weapon_sound = gi.soundindex("weapons/hyprbl1a.wav");
 
 	if (!(ent->client->buttons & BUTTON_ATTACK))
@@ -909,6 +911,7 @@ void Weapon_HyperBlaster_Fire (edict_t *ent)
 			else
 				damage = 20;
 			Blaster_Fire (ent, offset, damage, true, effect);
+			Blaster_Fire(ent, new_offset, damage, true, effect);
 			if (! ( (int)dmflags->value & DF_INFINITE_AMMO ) )
 				ent->client->pers.inventory[ent->client->ammo_index]--;
 
@@ -1299,7 +1302,7 @@ void Weapon_SuperShotgun (edict_t *ent)
 ======================================================================
 
 RAILGUN
-
+MOD: eliter 4k from splatoon
 ======================================================================
 */
 
@@ -1353,10 +1356,16 @@ void weapon_railgun_fire (edict_t *ent)
 
 void Weapon_Railgun (edict_t *ent)
 {
+	/*
 	static int	pause_frames[]	= {56, 0};
 	static int	fire_frames[]	= {4, 0};
 
 	Weapon_Generic (ent, 3, 18, 56, 61, pause_frames, fire_frames, weapon_railgun_fire);
+	*/
+	static int	pause_frames[] = { 39, 45, 50, 55, 0 };
+	static int	fire_frames[] = { 9, 17, 0 };
+
+	Weapon_Generic(ent, 8, 32, 55, 58, pause_frames, fire_frames, weapon_railgun_fire);
 }
 
 
@@ -1364,6 +1373,7 @@ void Weapon_Railgun (edict_t *ent)
 ======================================================================
 
 BFG10K
+MOD: more like blaster from splatoon
 
 ======================================================================
 */
@@ -1373,10 +1383,11 @@ void weapon_bfg_fire (edict_t *ent)
 	vec3_t	offset, start;
 	vec3_t	forward, right;
 	int		damage;
-	float	damage_radius = 1000;
+	float	damage_radius = 250; //prev 1000
 
 	if (deathmatch->value)
-		damage = 200;
+		//damage = 200;
+		damage = 100;
 	else
 		damage = 500;
 
@@ -1410,9 +1421,11 @@ void weapon_bfg_fire (edict_t *ent)
 	VectorScale (forward, -2, ent->client->kick_origin);
 
 	// make a big pitch kick with an inverse fall
+	/*
 	ent->client->v_dmg_pitch = -40;
 	ent->client->v_dmg_roll = crandom()*8;
 	ent->client->v_dmg_time = level.time + DAMAGE_TIME;
+	*/
 
 	VectorSet(offset, 8, 8, ent->viewheight-8);
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
@@ -1423,15 +1436,21 @@ void weapon_bfg_fire (edict_t *ent)
 	PlayerNoise(ent, start, PNOISE_WEAPON);
 
 	if (! ( (int)dmflags->value & DF_INFINITE_AMMO ) )
-		ent->client->pers.inventory[ent->client->ammo_index] -= 50;
+		ent->client->pers.inventory[ent->client->ammo_index] -= 25;
 }
 
 void Weapon_BFG (edict_t *ent)
 {
+	/*
 	static int	pause_frames[]	= {39, 45, 50, 55, 0};
 	static int	fire_frames[]	= {9, 17, 0};
 
 	Weapon_Generic (ent, 8, 32, 55, 58, pause_frames, fire_frames, weapon_bfg_fire);
+	*/
+	static int	pause_frames[] = { 25, 33, 42, 50, 0 };
+	static int	fire_frames[] = { 5, 0 };
+
+	Weapon_Generic(ent, 4, 12, 50, 54, pause_frames, fire_frames, weapon_bfg_fire);
 }
 
 
