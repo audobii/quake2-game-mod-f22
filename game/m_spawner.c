@@ -393,15 +393,84 @@ void spawner_die(edict_t* self, edict_t* inflictor, edict_t* attacker, int damag
 	self->takedamage = DAMAGE_YES;
 }
 
+void spawner_spawn_one(int loc_x, int loc_y, int loc_z) {
+	edict_t* entToSpawn;
+
+	entToSpawn = G_Spawn();
+	//mess with this to call different monsters
+	entToSpawn->classname = "monster_berserk";
+
+	//DEATHMATCH/MULTIPLAYER - spawn spawner at 1300 650 470
+
+	entToSpawn->s.origin[0] = loc_x;
+	entToSpawn->s.origin[1] = loc_y;
+	entToSpawn->s.origin[2] = loc_z;
+
+	ED_CallSpawn(entToSpawn);
+	gi.unlinkentity(entToSpawn);
+	//KillBox(entToSpawn);
+	gi.linkentity(entToSpawn);
+	/*
+	if (ent->speed)
+		VectorCopy(ent->movedir, entToSpawn->velocity);
+		*/
+}
+
+void spawner_start_waves() {
+	//every minute, spawn a new wave
+	//spawn 1 + currentWave zombies
+	//increment currentWave by 1
+	if ((int)level.time % 60 == 0) {
+		char wave_str[10];
+		currentWave += 1;
+
+		sprintf(wave_str, "%d", currentWave);
+
+		gi.dprintf("NEXT WAVE INCOMING! -- WAVE ");
+		gi.dprintf(wave_str);
+	}
+}
+
+void spawner_next_wave(edict_t* self) {
+	//every minute, spawn a new wave
+	//spawn 1 + currentWave zombies
+	//increment currentWave by 1
+	int i;
+	int r_x;
+	int r_y;
+	srand(time(NULL));
+
+	for (i = 0; i < 5; i++) {
+		r_x = rand() % 4;
+		r_y = rand() % 4;
+		spawner_spawn_one((self->s.origin[0] + 100) - (100 * r_x), (self->s.origin[1] - 150) + (100 * r_y), self->s.origin[2] + 20);
+	}
+
+	char wave_str[10];
+	currentWave += 1;
+
+	sprintf(wave_str, "%d", currentWave);
+
+	gi.dprintf("\nNEXT WAVE INCOMING! -- WAVE ");
+	gi.dprintf(wave_str);
+	
+	self->nextthink = level.time + 30;
+}
+
 /*QUAKED monster_berserk (1 .5 0) (-16 -16 -24) (16 16 32) Ambush Trigger_Spawn Sight
 */
+
+//spawn function for the monster spawner
+//maybe start waves here and handle in diff function? copy code from spawnmonster cmd i made
 void SP_monster_spawner (edict_t *self)
 {
+	/*
 	if (deathmatch->value)
 	{
 		G_FreeEdict (self);
 		return;
 	}
+	*/
 
 	// pre-caches
 	sound_pain  = gi.soundindex ("berserk/berpain2.wav");
@@ -439,6 +508,33 @@ void SP_monster_spawner (edict_t *self)
 	self->monsterinfo.scale = MODEL_SCALE;
 
 	gi.linkentity (self);
+	/*
+	int i;
+	int r_x;
+	int r_y;
+	srand(time(NULL));
+
+	for (i = 0; i < 5; i++) {
+		r_x = rand() % 4;
+		r_y = rand() % 4;
+		spawner_spawn_one(1300 - (100*r_x), 500 + (100*r_y), 480);
+	}
+	currentWave += 1;
+
+	char wave_str[10];
+	sprintf(wave_str, "%d", currentWave);
+	gi.dprintf("Starting ZOMBIES MODE at Wave ");
+	gi.dprintf(wave_str);
+	*/
+
+	//gi.dprintf("hi ");
+
+	//call wave spawning function here?
+	gi.dprintf(" -- Starting ZOMBIES MODE -- ");
+	self->think = spawner_next_wave;
+	self->nextthink = level.time + FRAMETIME;
+	
+
 
 	//walkmonster_start (self);
 }
